@@ -8,13 +8,9 @@ class ReadFile
   private:
     unsigned long int numLine;
     std::string fileName;
-    bool setName = false;
 
   public:
-    ReadFile();
-    void countLines();
-    void setNameFile(std::string fileName);
-    unsigned long int getNumLines();
-    ~ReadFile();
+    ReadFile(std::string fileName);
+    unsigned long int countLines();
 };
 #endif
