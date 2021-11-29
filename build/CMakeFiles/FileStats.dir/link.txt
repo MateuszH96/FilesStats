@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/FileStats.dir/main.cpp.o CMakeFiles/FileStats.dir/ReadFile.cpp.o CMakeFiles/FileStats.dir/ReadDirectory.cpp.o -o FileStats 

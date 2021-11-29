@@ -1,0 +1,3 @@
+/home/mateusz/Projects/C++_Language/praca/FilesStats/TEST/build/CMakeFiles/FilesStats.dir
+/home/mateusz/Projects/C++_Language/praca/FilesStats/TEST/build/CMakeFiles/edit_cache.dir
+/home/mateusz/Projects/C++_Language/praca/FilesStats/TEST/build/CMakeFiles/rebuild_cache.dir
