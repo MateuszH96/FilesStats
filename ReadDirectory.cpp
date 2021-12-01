@@ -6,6 +6,7 @@ ReadDirectory::ReadDirectory(std::string path)
     rowsNum = 0;
     fileNum = 0;
     sizeStringArray = 0;
+    dirName = getNameFolder(this->path);
     createArray();
     countFilesStats();
 }
@@ -51,7 +52,6 @@ void ReadDirectory::countFilesStats()
             delete tmpFile;
         }
     }
-    dirName = getNameFolder(path);
 }
 
 std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD)
