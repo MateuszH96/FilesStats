@@ -51,12 +51,13 @@ void ReadDirectory::countFilesStats()
             delete tmpFile;
         }
     }
+    dirName = getNameFolder(path);
 }
 
 std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD)
 {
 
-    out << "Folder NAME: " << getNameFolder(rD) << '\n'
+    out << "Folder NAME: " << rD.dirName << '\n'
         << "Number of files: " << rD.fileNum << '\n'
         << "Numbers of lines: " << rD.rowsNum << '\n';
     return out;
@@ -69,11 +70,16 @@ unsigned long long int ReadDirectory::getRowsNum()
 {
     return rowsNum;
 }
-std::string getNameFolder(ReadDirectory rD)
+std::string ReadDirectory::getPath()
 {
-    int i = rD.path.length() - 1;
-    while (rD.path[i--] != '/' || rD.path[i--] != 0)
-        ;
-
-    return rD.path.substr(i + 1);
+    return path;
+}
+std::string getNameFolder(std::string path)
+{
+    unsigned long long int i = path.length() - 1;
+    while (path[i] != '/' && i != 0)
+    {
+        i--;
+    }
+    return path.substr(i);
 }

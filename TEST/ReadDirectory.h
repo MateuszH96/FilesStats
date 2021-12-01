@@ -12,6 +12,7 @@ class ReadDirectory
     unsigned long long int rowsNum;
     unsigned int sizeStringArray;
     std::string path;
+    std::string dirName;
     std::string *pathListFiles;
     void createArray();
     void getNumFiles();
@@ -22,9 +23,9 @@ class ReadDirectory
     ~ReadDirectory();
     unsigned int getFileNum();
     unsigned long long int getRowsNum();
-    friend std::string getNameFolder(ReadDirectory rD);
+    std::string getPath();
     friend std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD);
 };
+std::string getNameFolder(std::string path);
 std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD);
-std::string getNameFolder(ReadDirectory rD);
 #endif
