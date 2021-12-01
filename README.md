@@ -14,7 +14,7 @@ in main folder
 g++ main.cpp ReadFile.cpp ReadDirectory.cpp -o FileStats -std=c++17 -Wall
 ```
 
-## Uruchomienie projektu
+## Run project
 
 curren folder
 ```bash
