@@ -19,7 +19,7 @@ TEST(ReadDirectoryTest, countfiles)
     // given:
     int expected = 2;
     std::string path = std::filesystem::current_path();
-    ReadDirectory a(path + "TEST");
+    ReadDirectory a(path + "/TEST");
     // when:
     unsigned int actual = a.getFileNum();
     // then:
@@ -43,7 +43,7 @@ TEST(ReadDirectoryTest, checkPath)
     std::string expected = "/TEST";
     ReadDirectory a(path + "/TEST");
     // when:
-    std::string actual = getNameFolder(a);
+    std::string actual = getNameFolder(a.getPath());
     // then:
     ASSERT_EQ(expected, actual);
 }

@@ -23,6 +23,10 @@ int main(int argc, char *argv[])
     {
         std::cout << message << '\n';
     }
+    catch (...)
+    {
+        std::cout << "Unknown ERROR\n";
+    }
 
     return 0;
 }
