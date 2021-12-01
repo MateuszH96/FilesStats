@@ -5,7 +5,7 @@
 #include <string>
 class ReadFile
 {
-  private:
+  protected:
     unsigned long int numLine;
     std::string fileName;
 
