@@ -12,11 +12,12 @@ unsigned long int ReadFile::countLines()
     std::string lineFile;
     if (!file.is_open())
     {
-        throw "Nie udało się otworzyć pliku: " + fileName + "\n";
+        throw "Failed open: " + fileName + "\n";
     }
     while (getline(file, lineFile))
     {
         numLine++;
     }
+    file.close();
     return numLine;
 }

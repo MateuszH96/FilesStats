@@ -21,7 +21,7 @@ void ReadDirectory::createArray()
     std::filesystem::file_status a = std::filesystem::status(path);
     if (a.type() == std::filesystem::file_type::not_found)
     {
-        throw "nie istnieje podana ściezka";
+        throw "This path doesn't exist";
     }
     getNumFiles();
     pathListFiles = new std::string[sizeStringArray];
@@ -55,20 +55,25 @@ void ReadDirectory::countFilesStats()
 
 std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD)
 {
-    out << "Folder NAME: " << rD.path << '\n'
+
+    out << "Folder NAME: " << getNameFolder(rD) << '\n'
         << "Number of files: " << rD.fileNum << '\n'
         << "Numbers of lines: " << rD.rowsNum << '\n';
     return out;
 }
 unsigned int ReadDirectory::getFileNum()
 {
-    return this->fileNum;
+    return fileNum;
 }
 unsigned long long int ReadDirectory::getRowsNum()
 {
-    return this->rowsNum;
+    return rowsNum;
 }
-std::string ReadDirectory::getPath()
+std::string getNameFolder(ReadDirectory rD)
 {
-    return this->path;
+    int i = rD.path.length() - 1;
+    while (rD.path[i--] != '/' || rD.path[i--] != 0)
+        ;
+
+    return rD.path.substr(i + 1);
 }

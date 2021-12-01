@@ -20,10 +20,11 @@ class ReadDirectory
   public:
     ReadDirectory(std::string path);
     ~ReadDirectory();
-    friend std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD);
     unsigned int getFileNum();
     unsigned long long int getRowsNum();
-    std::string getPath();
+    friend std::string getNameFolder(ReadDirectory rD);
+    friend std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD);
 };
 std::ostream &operator<<(std::ostream &out, const ReadDirectory &rD);
+std::string getNameFolder(ReadDirectory rD);
 #endif
